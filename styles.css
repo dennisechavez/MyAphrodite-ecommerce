@@ -1,244 +1,734 @@
-html {
-  font-size: 16px;
-  font-family: "Arial", sans-serif;
-  color: Black;
-}
 body {
-  background-color: Azure;
-  max-width: 800px;
-  margin: 0 auto;
+  text-align: center;
+  background-color: #f2f2f2;
 }
 h1 {
-  font-family: monospace;
-  color: #e7af8e;
+  color: black;
+  font-size: 28px;
+  text-align: center;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
 }
-img {
-  max-width: 100%;
-  transform: rotatex(360deg);
-  transition: transform 1s;
-  border-radius: 25px;
-  margin-top: 14%;
-  transform:
-    rotateX(51deg)
-    rotateZ(43deg);
-  transform-style: preserve-3d;
-  border-radius: 32px;
-  box-shadow:
-    1px 1px 0 1px #f9f9fb,
-    -1px 0 28px 0 rgba(34, 33, 81, 0.01),
-    28px 28px 28px 0 rgba(34, 33, 81, 0.25);
-  transition:
-    .4s ease-in-out transform,
-    .4s ease-in-out box-shadow;
-
-  &:hover {
-    transform:
-      translate3d(0px, -16px, 0px)
-      rotateX(51deg)
-      rotateZ(43deg);
-    box-shadow:
-      1px 1px 0 1px #f9f9fb,
-      -1px 0 28px 0 rgba(34, 33, 81, 0.01),
-      54px 54px 28px -10px rgba(34, 33, 81, 0.15);
-  }
+h2 {
+  color: black;
+  font-size: 12px;
+  text-align: center;
+  font-family: "Newsreader", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin: 30px;
 }
 
-@font-face {
-  font-family: Clip;
-  src: url("https://acupoftee.github.io/fonts/Clip.ttf");
+/* Top Navigation Bar */
+
+.navbar-fixed {
+  top: 0;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
 }
 
-.sign {
+#nav_bar {
+  background-color: #f2f2f2;
+  border-radius: 0px;
+  margin-bottom: 0;
+  height: 25px;
+  word-spacing: 20px;
+}
+
+//the below css are for the links, not needed for sticky nav
+.nav_links {
+  margin: 0;
+}
+
+.nav_links li {
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.nav_links li a {
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav_links li a:hover {
+  color: #625750;
+}
+
+.nav_links li i {
+  padding: 0 15.5px;
+}
+
+/* POP UP MODAL FORM STYLING */
+.modal {
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 50%; /* Full width */
+  height: 50%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+.modal-content {
+}
+.close-btn {
+  cursor: pointer;
+}
+.form-control {
+  margin: 20px 0;
+  font-size: 12px;
+  text-align: center;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.paragraph-box {
+  font-size: 12px;
+  text-align: center;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.button {
+  margin: 8px;
+  font-size: 12px;
+  text-align: center;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+}
+/* Dropdown Button */
+
+.dropbtn {
+  background-color: #f2f2f2;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
   position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content li {
+  margin: 0;
+  width: 100%;
+}
+
+.dropdown-content li a {
+  color: black;
+  padding: 16px 16px;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #f2f2f2;
+}
+
+/* Icons */
+.fas {
+  color: black;
+  cursor: pointer;
+}
+
+.fas:hover {
+  color: #625750;
+}
+/* Header */
+.header {
+  position: fixed;
+  top: 10px;
+  width: 80%;
+  padding: 0px 0;
+  background-color: #f2f2f2;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.header li {
+  display: inline-block;
+  padding: 1px;
+}
+
+.header a {
+  color: #4a4a4a;
+}
+
+a.home {
+  color: #FFFFF;
+}
+
+/* BANNER */
+.banner {
+  margin-top: 30px;
+  padding: 40px 0 35px;
+  position: relative;
+}
+
+.banner-background {
+  content: "";
+  position: absolute;
+  background-image: url("http://clipart-library.com/new_gallery/149045_lipstick-kiss-png.png");
+  background-size: 120px;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.5;
+}
+
+.banner-content {
+  position: relative;
+}
+
+.brandslinks a {
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+  line-height: 1.8;
+  color: black;
+  text-decoration: none;
+}
+.brandslinks:hover {
+  color: gray;
+}
+
+/* IMAGE GRID */
+html,
+body {
+  background-color: #f2f2f2;
+  margin: 10px;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.container > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-  height: 50%;
-  background-image: radial-gradient(
-    ellipse 50% 35% at 50% 50%,
-    #6b1839,
-    transparent
-  );
-  transform: translate(-50%, -50%);
-  letter-spacing: 2;
-  left: 50%;
-  top: 7%;
-  font-family: "Clip";
-  text-transform: uppercase;
-  font-size: 6em;
-  color: #ffe6ff;
-  text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
-    -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-    0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
-  animation: shine 2s forwards, flicker 3s infinite;
+  font-size: 2em;
+  color: #ffeead;
 }
 
-@keyframes blink {
-  0%,
-  22%,
-  36%,
-  75% {
-    color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
-      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
-  }
-  28%,
-  33% {
-    color: #ff65bd;
-    text-shadow: none;
-  }
-  82%,
-  97% {
-    color: #ff2483;
-    text-shadow: none;
-  }
+.container > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px #f2f2f2;
 }
 
-.flicker {
-  animation: shine 2s forwards, blink 3s 2s infinite;
+/* Grid */
+.container {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: 125px;
+  grid-auto-flow: dense; /* Fill all spaces with fitted images */
 }
 
-.fast-flicker {
-  animation: shine 2s forwards, blink 10s 1s infinite;
+.horizontal {
+  grid-column: span 2;
 }
 
-@keyframes shine {
-  0% {
-    color: #6b1839;
-    text-shadow: none;
-  }
-  100% {
-    color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
-      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+.vertical {
+  grid-row: span 2;
+}
+
+.big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 1024px) {
+  .wrapper {
+    width: 960px;
+    margin: 0 auto;
   }
 }
 
-@keyframes flicker {
+/* Footer */
+
+.fab {
+  color: black;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  letter-spacing: 20px;
+  cursor: pointer;
+}
+.fab:hover {
+  color: #625750;
+}
+
+/* Footer Links */
+
+#nav_bar2 {
+  background-color: #f2f2f2;
+  border-radius: 0px;
+  margin-bottom: 100px;
+  height: 25px;
+  word-spacing: 10px;
+}
+
+//the below css are for the links, not needed for sticky nav
+.nav_links2 {
+  margin: 0;
+}
+
+.nav_links2 li {
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.nav_links2 li a {
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav_links2 li a:hover {
+  color: #625750;
+}
+
+.nav_links2 li i {
+  padding: 0 15.5px;
+}
+
+/* Popup modal */
+.modal {
+  display: none;
+  position: fixed;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  margin: auto;
+  width: 75%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+.close-btn {
+  float: right;
+  color: lightgray;
+  font-size: 24px;
+  font-weight: bold;
+}
+.close-btn:hover {
+  color: darkgray;
+}
+@-webkit-keyframes animatetop {
   from {
-    opacity: 1;
+    top: -300px;
+    opacity: 0;
   }
-
-  4% {
-    opacity: 0.9;
-  }
-
-  6% {
-    opacity: 0.85;
-  }
-
-  8% {
-    opacity: 0.95;
-  }
-
-  10% {
-    opacity: 0.9;
-  }
-
-  11% {
-    opacity: 0.922;
-  }
-
-  12% {
-    opacity: 0.9;
-  }
-
-  14% {
-    opacity: 0.95;
-  }
-
-  16% {
-    opacity: 0.98;
-  }
-
-  17% {
-    opacity: 0.9;
-  }
-
-  19% {
-    opacity: 0.93;
-  }
-
-  20% {
-    opacity: 0.99;
-  }
-
-  24% {
-    opacity: 1;
-  }
-
-  26% {
-    opacity: 0.94;
-  }
-
-  28% {
-    opacity: 0.98;
-  }
-
-  37% {
-    opacity: 0.93;
-  }
-
-  38% {
-    opacity: 0.5;
-  }
-
-  39% {
-    opacity: 0.96;
-  }
-
-  42% {
-    opacity: 1;
-  }
-
-  44% {
-    opacity: 0.97;
-  }
-
-  46% {
-    opacity: 0.94;
-  }
-
-  56% {
-    opacity: 0.9;
-  }
-
-  58% {
-    opacity: 0.9;
-  }
-
-  60% {
-    opacity: 0.99;
-  }
-
-  68% {
-    opacity: 1;
-  }
-
-  70% {
-    opacity: 0.9;
-  }
-
-  72% {
-    opacity: 0.95;
-  }
-
-  93% {
-    opacity: 0.93;
-  }
-
-  95% {
-    opacity: 0.95;
-  }
-
-  97% {
-    opacity: 0.93;
-  }
-
   to {
+    top: 0;
     opacity: 1;
   }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+/* ABOUT */
+/* PARAGRAPHS */
+.paragraph {
+  font-size: 16px;
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+}
+.paragraph-about {
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-left: 15%;
+  margin-right: 15%;
+  line-height: 1.6;
+}
+.paragraph-brands {
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 15%;
+  margin-right: 15%;
+  line-height: 1.6;
+}
+
+.paragraph-collection {
+  font-size: 50px;
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 250px;
+  margin-left: 200px;
+  text-align: left;
+  line-height: 0.5;
+}
+.paragraph-collection-wrap {
+  display: flex;
+}
+.paragraph-collectionshoes-wrap {
+  display: flex;
+}
+.paragraph-collection-makeup {
+  font-size: 50px;
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 250px;
+  margin-left: 200px;
+  margin-bottom: 10px;
+  text-align: right;
+  line-height: 1;
+}
+.paragraph-description {
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-left: 200px;
+  text-align: right;
+  line-height: 1.6;
+}
+.paragraph-description-accesories {
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-left: 200px;
+  text-align: right;
+  line-height: 1.5;
+}
+.paragraph-accesories-description1 {
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  text-align: left;
+  line-height: 1.6;
+}
+.paragraph-collection-accesories {
+  font-size: 50px;
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 280px;
+  margin-bottom: 0px;
+  margin-left: 200px;
+  text-align: left;
+  line-height: 0.5;
+}
+.paragraph-description-makeup {
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-left: 190px;
+  margin-right: 0px;
+  text-align: right;
+  line-height: 1.6;
+}
+.paragraph-newsletter {
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 100px;
+  margin-bottom: 200px;
+  margin-left: 15%;
+  margin-right: 15%;
+  line-height: 1.6;
+}
+.paragraph-shoes {
+  font-size: 50px;
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 250px;
+  margin-left: 200px;
+  text-align: left;
+  line-height: 1;
+  margin-right: 250px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+}
+.paragraph-shoes-description {
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 200px;
+  text-align: left;
+  line-height: 0.8;
+  margin-right: 250px;
+  margin-left: 0px;
+  margin-bottom: 15px;
+  margin-top: 0px;
+}
+.image11 {
+  margin-top: 50px;
+}
+.image12 {
+  margin-top: 50px;
+  margin-left: 170px;
+  margin-right: 0px;
+}
+.image11-makeup {
+  margin-top: 50px;
+  margin-right: 220px;
+  margin-left: 0px;
+}
+.featured {
+  font-size: 30px;
+  padding: 0 15.5px;
+  color: black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.button-shopnow {
+  margin-right: 0px;
+  margin-left: 570px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  background-color: #f2f2f2;
+  color: black;
+  border: 1px solid black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.button-shopnow2 {
+  margin-right: 570px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  background-color: #f2f2f2;
+  color: black;
+  border: 1px solid black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.button-shopnow-makeup {
+  margin-right: 0px;
+  margin-left: 580px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  background-color: #f2f2f2;
+  color: black;
+  border: 1px solid black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.button-shopnow-accesories {
+  margin-right: 450px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  background-color: #f2f2f2;
+  color: black;
+  border: 1px solid black;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.newsletter-title {
+  color: black;
+  font-size: 28px;
+  text-align: center;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-top: 80px;
+}
+.newsletter-button {
+  cursor: pointer;
+  font-size: 13px;
+  text-align: center;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+}
+.newsletter-container {
+  font-size: 13px;
+  text-align: center;
+  font-family: "Newsreader", serif;
+  font-family: "Parisienne", cursive;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+}
+.singular-form {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: var(--accent-color);
+}
+/*subscribe button */
+.container {
+  border-radius: 8px;
+  font-size: 13px;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
 }
